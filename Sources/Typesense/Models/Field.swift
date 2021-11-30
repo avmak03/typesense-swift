@@ -11,25 +11,13 @@ import Foundation
 
 public struct Field: Codable {
 
-    public enum ModelType: String, Codable { 
-        case string = "string"
-        case int32 = "int32"
-        case int64 = "int64"
-        case float = "float"
-        case bool = "bool"
-        case stringarr = "string[]"
-        case int32arr = "int32[]"
-        case int64arr = "int64[]"
-        case floatarr = "float[]"
-        case boolarr = "bool[]"
-    }
     public var name: String
-    public var type: ModelType
-    public var _optional: Bool
-    public var facet: Bool
+    public var type: String
+    public var _optional: Bool?
+    public var facet: Bool?
     public var index: Bool?
 
-    public init(name: String, type: ModelType, _optional: Bool, facet: Bool, index: Bool? = nil) {
+    public init(name: String, type: String, _optional: Bool? = nil, facet: Bool? = nil, index: Bool? = nil) {
         self.name = name
         self.type = type
         self._optional = _optional

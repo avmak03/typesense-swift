@@ -14,12 +14,19 @@ public struct SearchResultHit: Codable {
     /** Contains highlighted portions of the search fields */
     public var highlights: [SearchHighlight]
     /** Can be any key-value pair */
-    public var document: String
+    public var document: [String:Data]
+    public var textMatch: Int64
 
-    public init(highlights: [SearchHighlight], document: String) {
+    public init(highlights: [SearchHighlight], document: [String:Data], textMatch: Int64) {
         self.highlights = highlights
         self.document = document
+        self.textMatch = textMatch
     }
 
+    public enum CodingKeys: String, CodingKey { 
+        case highlights
+        case document
+        case textMatch = "text_match"
+    }
 
 }
