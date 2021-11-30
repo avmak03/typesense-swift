@@ -7,11 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          # Build the Package
-          name: Build Package
-          command: swift build
-      - run:
-          # Run tests after building the Package
+          # Build and Test the Typesense Package
           name: Run Tests
           command: swift test
 
