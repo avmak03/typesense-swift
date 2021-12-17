@@ -26,8 +26,7 @@ let package = Package(
         .target(
             name: "Typesense",
             dependencies: [],
-            linkerSettings: [LinkerSetting.unsafeFlags(["-v", "-Wl", "-weak-lswift_Concurrency -Wl", "-rpath", "/usr/lib/swift"
-                                                       ])]
+            linkerSettings: [LinkerSetting.unsafeFlags(["-Wl,-weak-lswift_Concurrency -Wl,-rpath,/usr/lib/swift"])]
         ),
         .testTarget(
             name: "TypesenseTests",
