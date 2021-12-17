@@ -25,7 +25,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Typesense",
-            dependencies: []),
+            dependencies: [],
+            linkerSettings: [LinkerSetting.unsafeFlags(["-v", "-Wl", "-weak-lswift_Concurrency -Wl", "-rpath", "/usr/lib/swift"
+                                                       ])]
+        ),
         .testTarget(
             name: "TypesenseTests",
             dependencies: ["Typesense"]),
