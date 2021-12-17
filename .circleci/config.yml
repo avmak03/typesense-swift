@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     macos:
-      xcode: 13.1.0 # Xcode 13 or higher required to compile new Swift concurrency
+      xcode: 13.2.0 # Xcode 13 or higher required to compile new Swift concurrency
     steps:
       - checkout
       - run:
